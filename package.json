@@ -3,29 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@nextui-org/button": "^2.0.21",
-    "@nextui-org/system": "^2.0.10",
-    "@nextui-org/theme": "^2.1.9",
-    "framer-motion": "^10.16.4",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest"
-  }
+    "turbo": "1.10.4"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }
