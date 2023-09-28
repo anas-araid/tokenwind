@@ -1,0 +1,17 @@
+{
+  "name": "tokenwind-cli",
+  "version": "0.1.0",
+  "description": "Instantly convert design tokens into tailwind theme config",
+  "main": "bin/tokenwind.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "tokenwind": "bin/tokenwind.js"
+  },
+  "author": "Anas Araid",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^17.7.2"
+  }
+}
