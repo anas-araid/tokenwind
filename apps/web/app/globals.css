@@ -23,7 +23,10 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  --background: linear-gradient(to right, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background-color: #161616;
+  /*--tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));*/
   height: 100%;
 }
 

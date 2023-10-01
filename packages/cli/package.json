@@ -12,6 +12,9 @@
   "author": "Anas Araid",
   "license": "MIT",
   "dependencies": {
+    "@tokens-bruecke/sd-utils": "^3.0.0",
+    "sd-tailwindcss-transformer": "^1.4.0",
+    "style-dictionary": "^3.8.0",
     "yargs": "^17.7.2"
   }
 }
