@@ -34,3 +34,9 @@ body {
   height: 100%;
   width: 100%;
 }
+
+::selection {
+  background: white;
+  color: #000;
+  -webkit-text-fill-color: #000;
+}

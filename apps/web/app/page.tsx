@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Snippet } from "@nextui-org/snippet";
 
 export default function Home() {
   return (
@@ -14,19 +15,34 @@ export default function Home() {
             Tokenwind
             {/* Convert design tokens<br></br>into <br></br>Tailwind themes */}
           </h1>
-          <p className="mt-6 leading-5 text-zinc-300 sm:text-center">
-            Instantly convert your Figma&apos;s design token into ready to import Tailwind themes.
+          <p className="mt-6 leading-5 text-zinc-300 text-center">
+            Instantly convert your W3C design tokens into ready to import Tailwind themes.
           </p>
           <div className="flex flex-col justify-center gap-4 mx-auto mt-8 sm:flex-row sm:max-w-lg ">
-            <a className="w-32 text-center inline-block space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-white/80 hover:bg-white/10 hover:text-white duration-150 hover:drop-shadow-cta ring-0" href="/deploy">
-              Docs
+            <a
+              className="w-32 text-center inline-block space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-white/80 hover:bg-white/10 hover:text-white duration-150 hover:drop-shadow-cta ring-0"
+              href="https://github.com/anas-araid/tokenwind"
+              target="_blank"
+            >
+              Github
             </a>
-            <a className="w-32 text-center transition-all space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-zinc-800 bg-zinc-50 hover:bg-zinc-50/80 ring-1 ring-transparent hover:ring-zinc-600/80 duration-150 hover:drop-shadow-cta" href="/share">
-              <span>Convert</span>
+            <a className="w-32 text-center transition-all space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-zinc-800 bg-zinc-50 hover:bg-zinc-50/80 ring-1 ring-transparent hover:ring-zinc-600/80 duration-150 hover:drop-shadow-cta" href="/convert">
+              <span>Try it online</span>
             </a>
+          </div>
+          <div className="flex flex-wrap gap-4 mt-24">
+            <Snippet
+              size="lg"
+              color="default"
+              variant="flat"
+              symbol="$"
+              disableTooltip
+            >
+              npx tokenwind generate -t token.json -o ./out
+            </Snippet>
           </div>
         </div>
       </div>
-    </main>
+    </main >
   )
 }
