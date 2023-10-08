@@ -40,6 +40,15 @@ export default function Home() {
             >
               npx tokenwind generate -t token.json -o ./out
             </Snippet>
+            <div className="relative overflow-hidden w-24 h-12 rounded-xl">
+              <div className="asdf rounded-xl"></div>
+              <div className="border-conic"></div>
+
+              {/* <div className="w-64 h-32 mask asdf"> */}
+              {/* <div className="w-full h-full absolute top-0 left-0 animate-spin">
+              </div> */}
+              {/* </div> */}
+            </div>
           </div>
         </div>
       </div>

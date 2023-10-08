@@ -40,3 +40,71 @@ body {
   color: #000;
   -webkit-text-fill-color: #000;
 }
+
+.mask {
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: add, add;
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.asdf {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+.border-conic {
+  position: absolute;
+  inset: 0;
+  top: 0px;
+  left: 0px;
+  top: 50%;
+  left: 0;
+  height: 100%;
+  background: conic-gradient(transparent 50deg, #ff4874 80deg, transparent 100deg);
+  filter: blur(8px);
+  border-radius: 16px;
+  transform-origin: center;
+  animation: borderTurn -0.64s linear 4s infinite;
+  will-change: transform;
+  z-index: 1;
+}
+
+.asdf {
+  position: relative;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 80%;
+  width: 90%;
+}
+
+@keyframes borderTurn {
+  0% {
+    transform: translateY(-25%) translateX(40%) rotate(0deg);
+  }
+  30% {
+    transform: translateY(0) translateX(0) rotate(90deg) scaleX(0.7);
+  }
+  50% {
+    transform: translateY(-25%) translateX(-40%) rotate(180deg);
+  }
+  70% {
+    transform: translateY(0) translateX(0) rotate(270deg) scaleX(0.7);
+  }
+  100% {
+    transform: translateY(-25%) translateX(40%) rotate(1turn);
+  }
+}
