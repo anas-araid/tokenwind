@@ -1,7 +1,22 @@
+'use client';
 /* eslint-disable @next/next/no-img-element */
 import { Snippet } from "@nextui-org/snippet";
+import { Button } from "@/components/ui/button"
+import { Copy } from "lucide-react"
+import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
+
+const COMMAND = 'npx tokenwind@latest generate';
 
 export default function Home() {
+  const [value, copy] = useCopyToClipboard()
+
+  const handleCopy = async () => {
+    const res = await copy(COMMAND)
+    if (res) {
+      // TOAST
+    }
+  }
+
   return (
     <main className="h-full relative overflow-hidden">
       <img
@@ -30,24 +45,22 @@ export default function Home() {
               <span>Try it online</span>
             </a>
           </div>
-          <div className="flex flex-wrap gap-4 mt-24">
-            <Snippet
-              size="lg"
-              color="default"
-              variant="flat"
-              symbol="$"
-              disableTooltip
-            >
-              npx tokenwind generate -t token.json -o ./out
-            </Snippet>
-            <div className="relative overflow-hidden w-24 h-12 rounded-xl">
+          <div className="flex flex-col flex-wrap mt-12">
+            {/* <div className="relative overflow-hidden w-24 h-12 rounded-xl">
               <div className="asdf rounded-xl"></div>
               <div className="border-conic"></div>
+            </div>*/}
 
-              {/* <div className="w-64 h-32 mask asdf"> */}
-              {/* <div className="w-full h-full absolute top-0 left-0 animate-spin">
-              </div> */}
-              {/* </div> */}
+            <div className="glowing-cli">
+              <p className="absolute ml-4 left-2 leading-5 text-zinc-300 text-center text-md">~ npx tokenwind@latest generate</p>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute z-10 right-3 h-8 w-8 top-1/2 -translate-y-1/2 hover:bg-white hover:bg-opacity-10 hover:text-white"
+                onClick={handleCopy}
+              >
+                <Copy className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         </div>
