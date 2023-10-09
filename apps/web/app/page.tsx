@@ -4,16 +4,23 @@ import { Snippet } from "@nextui-org/snippet";
 import { Button } from "@/components/ui/button"
 import { Copy } from "lucide-react"
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
+import { useToast } from "@/components/ui/use-toast"
 
 const COMMAND = 'npx tokenwind@latest generate';
 
 export default function Home() {
-  const [value, copy] = useCopyToClipboard()
+  const [_, copy] = useCopyToClipboard()
+  const { toast } = useToast();
 
   const handleCopy = async () => {
-    const res = await copy(COMMAND)
+    const res = await copy(COMMAND);
+
     if (res) {
-      // TOAST
+      toast({
+        variant: 'default',
+        description: "Command has been copied to clipboard!",
+        className: 'text-white'
+      })
     }
   }
 
@@ -46,13 +53,8 @@ export default function Home() {
             </a>
           </div>
           <div className="flex flex-col flex-wrap mt-12">
-            {/* <div className="relative overflow-hidden w-24 h-12 rounded-xl">
-              <div className="asdf rounded-xl"></div>
-              <div className="border-conic"></div>
-            </div>*/}
-
             <div className="glowing-cli">
-              <p className="absolute ml-4 left-2 leading-5 text-zinc-300 text-center text-md">~ npx tokenwind@latest generate</p>
+              <p className="absolute ml-4 left-2 leading-5 text-zinc-300 text-center text-md">{`~ ${COMMAND}`}</p>
               <Button
                 variant="ghost"
                 size="icon"
