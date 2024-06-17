@@ -2,7 +2,7 @@
 
 Instantly convert your W3C design tokens into ready to import Tailwind themes.
 
-`npx tokenwind@latest generate -t token.json -o /dist`
+`npx tokenwind-cli@latest generate -t token.json -o /dist`
 
 
 - [Usage](#usage)
