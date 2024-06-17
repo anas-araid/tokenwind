@@ -1,9 +1,8 @@
-import { Button } from "@nextui-org/button";
-
+'use client';
 export default function Convert() {
   return (
-    <div>
-      <Button>Press me</Button>
-    </div>
+    <main className="h-full relative overflow-hidden">
+      WIP
+    </main >
   )
 }
