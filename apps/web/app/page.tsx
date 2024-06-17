@@ -9,7 +9,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 
-const COMMAND = 'npx tokenwind@latest generate';
+const COMMAND = 'npx tokenwind-cli@latest generate';
 
 export default function Home() {
   const [_, copy] = useCopyToClipboard()
@@ -68,10 +68,7 @@ export default function Home() {
                 // hover:bg-zinc-50/80 hover:ring-zinc-600/80  hover:drop-shadow-cta
                 className="w-32 text-center transition-all space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-zinc-800 bg-zinc-50  ring-1 ring-transparent duration-150 cursor-not-allowed opacity-30"
               >
-                {/* <a className="w-32 text-center transition-all space-x-2 rounded-full px-4 py-1.5 md:py-2 text-base font-semibold leading-7 text-zinc-800 bg-zinc-50 hover:bg-zinc-50/80 ring-1 ring-transparent hover:ring-zinc-600/80 duration-150 hover:drop-shadow-cta" href="/convert"> */}
                 <span>Try it online</span>
-                {/* </a> */}
-
               </button>
               <span className="absolute top-[4%] right-[2%] translate-x-2/4 -translate-y-2/4 bg-green-400/20  text-green-400 border-green-400/50 border text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
                 Coming soon
