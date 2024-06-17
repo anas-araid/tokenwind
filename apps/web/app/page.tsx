@@ -7,9 +7,8 @@ import { Copy, Check } from "lucide-react";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
 
-const COMMAND = 'npx tokenwind-cli@latest generate';
+const COMMAND = 'npx tokenwind-cli generate -t token.json -o ./output';
 
 export default function Home() {
   const [_, copy] = useCopyToClipboard()
